@@ -1,0 +1,108 @@
+body {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    min-height: 100vh;  
+    background-color: black;  
+    position: relative;  
+    overflow: hidden;  
+    background-image: url(Images/backround.jpg);  
+    background-size: cover;  
+    background-position: center;  
+    animation: fadeIn 1.5s ease-in-out forwards;  /* Smooth fade-in animation */
+    opacity: 0;  /* Start hidden */
+}
+
+/* Ensures the text and animation scale properly */
+.loading {  
+    max-width: 80%;  
+    line-height: 1.4;  
+    font-size: 3rem;  
+    font-weight: bold;  
+    text-align: center;  
+    color: gold;  
+    animation: fadeIn 1.5s ease-in-out forwards;  /* Fade-in effect */
+    opacity: 0;
+}
+
+.loading__author {  
+    font-weight: normal;  
+    font-size: 2rem;  
+    color: gold;  
+    margin: 0.6rem 0 2rem 0;  
+    display: block;  
+    animation: fadeIn 1.5s ease-in-out forwards 0.5s;  /* Delayed fade-in */
+    opacity: 0;
+}
+
+/* Responsive animation */
+.loading__anim {  
+    width: 100px;  
+    height: 100px;  
+    display: inline-block;  
+    border: 10px solid black;  
+    border-left-color: rgba(3,155,229 ,1);  
+    border-radius: 50%;  
+    animation: rotate 600ms infinite linear, rainbow 2s infinite linear, fadeIn 1.5s ease-in-out forwards 1s;  
+    opacity: 0;
+}
+
+/* Rotation animation */
+@keyframes rotate {  
+    to {  
+        transform: rotate(1turn);  
+    }  
+}
+
+/* Rainbow color transition */
+@keyframes rainbow {  
+    0% { border-left-color: red; }  
+    16% { border-left-color: orange; }  
+    33% { border-left-color: yellow; }  
+    50% { border-left-color: green; }  
+    66% { border-left-color: blue; }  
+    83% { border-left-color: indigo; }  
+    100% { border-left-color: violet; }  
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {  
+    from { opacity: 0; }  
+    to { opacity: 1; }  
+}
+
+/* 🔹 RESPONSIVE DESIGN */
+
+/* Tablet screens */
+@media (max-width: 768px) {  
+    .loading {  
+        font-size: 2.5rem;  
+    }  
+
+    .loading__author {  
+        font-size: 1.8rem;  
+    }  
+
+    .loading__anim {  
+        width: 80px;  
+        height: 80px;  
+        border-width: 8px;  
+    }  
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {  
+    .loading {  
+        font-size: 2rem;  
+    }  
+
+    .loading__author {  
+        font-size: 1.5rem;  
+    }  
+
+    .loading__anim {  
+        width: 60px;  
+        height: 60px;  
+        border-width: 6px;  
+    }  
+}
